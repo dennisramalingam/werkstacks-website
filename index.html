@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Werkstacks Solutions — Data Analytics</title>
+<meta name="description" content="Werkstacks turns scattered business data into dashboards and reporting your team actually uses. Start with a free data audit.">
+<link rel="canonical" href="https://www.werkstacks.com/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Werkstacks Solutions">
+<meta property="og:title" content="Werkstacks Solutions — Data Analytics">
+<meta property="og:description" content="Werkstacks turns scattered business data into dashboards and reporting your team actually uses. Start with a free data audit.">
+<meta property="og:url" content="https://www.werkstacks.com/">
+<meta property="og:image" content="https://www.werkstacks.com/assets/social-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B2033">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0B2033; font-family: 'Outfit', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #F4F1EA; text-decoration: none; }
+  a:hover { color: #5B3DF5; }
+  section[id] { scroll-margin-top: 96px; }
+</style>
+<script>window.OM_SCENES = '[{"name":"Scatter","dur":3,"desc":"Loose data sheets drift in chaos; the camera drifts across them"},{"name":"Engine","dur":3.2,"desc":"The sheets are pulled into the Werkstacks engine block and processed"},{"name":"Dashboard","dur":3,"desc":"Clean data chips fly out and assemble a live dashboard with growing bars"},{"name":"Success","dur":5.6,"desc":"A trophy rises, the headline assembles, and the camera pulls back over the whole journey","nat":2.8}]';</script>
+<script>window.OM_PLAYBACK = '{"mode":"loop"}';</script>
+<script src="./image-slot.js"></script>
+<script>window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "#5B3DF5",
+  "showRail": true,
+  "motionEditor": true
+}/*EDITMODE-END*/;</script>
+</helmet>
+<div style="position: relative; background: #0B2033; min-height: 100vh;">
+
+  <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 60;">
+  <div style="background: #5B3DF5; color: #F4F1EA; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; max-height: {{ promoH }}px; opacity: {{ promoOpacity }};">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 11px {{ gut }}px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 15px;">
+      <div style="display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: nowrap;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; background: rgba(11,32,51,0.28); padding: 4px 9px; border-radius: 3px;">NEW</span>
+        <span style="font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Free data audit for new clients — we map your scattered data in 30 minutes.</span>
+        <a href="#contact" style="display: {{ bookItDisplay }}; color: #F4F1EA; border-bottom: 1px solid rgba(244,241,234,0.5); padding-bottom: 1px; white-space: nowrap;">Book it</a>
+      </div>
+      <div style="display: {{ promoAsideDisplay }}; align-items: center; gap: 20px; white-space: nowrap;">
+        <a href="tel:+17868246815" style="color: #F4F1EA; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.04em;">+1 (786) 824-6815</a>
+        <div style="display: flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em;">
+          <span style="color: #F4F1EA; font-weight: 600;">EN</span>
+          <span style="opacity: 0.45;">/</span>
+          <span title="German coming soon" style="opacity: 0.45; cursor: not-allowed;">DE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header style="position: relative; z-index: 50;">
+    <div style="position: absolute; inset: 0; background: rgba(11,32,51,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(244,241,234,0.10); transition: opacity 0.28s ease; opacity: {{ navBg }};"></div>
+    <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 0 {{ gut }}px; display: flex; align-items: center; justify-content: space-between; gap: 40px; transition: height 0.28s ease; height: {{ navH }}px;">
+      <a href="#top" style="display: flex; flex-direction: column; gap: 3px; transition: transform 0.28s ease; transform-origin: left center; transform: {{ markScale }};">
+        <span style="font-size: 25px; font-weight: 800; letter-spacing: -0.01em; color: #F4F1EA; line-height: 1;">WERKSTACKS</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.44em; color: rgba(244,241,234,0.55); line-height: 1;">SOLUTIONS</span>
+      </a>
+      <nav style="display: {{ navDisplay }}; align-items: center; gap: 38px;">
+        <a href="#services" style="font-size: 16px; font-weight: 500; color: rgba(244,241,234,0.82); transition: color 0.18s ease;" style-hover="color: #F4F1EA;">Our Services</a>
+        <a href="#faq" style="font-size: 16px; font-weight: 500; color: rgba(244,241,234,0.82); transition: color 0.18s ease;" style-hover="color: #F4F1EA;">FAQ</a>
+        <a href="#news" style="font-size: 16px; font-weight: 500; color: rgba(244,241,234,0.82); transition: color 0.18s ease;" style-hover="color: #F4F1EA;">News</a>
+        <a href="#contact" style="background: #5B3DF5; color: #F4F1EA; font-size: 16px; font-weight: 600; padding: 13px 26px; border-radius: 999px; transition: background 0.18s ease, transform 0.18s ease;" style-hover="background: #6F55F7; transform: translateY(-1px);">Contact Us</a>
+      </nav>
+      <button type="button" onClick="{{ toggleMenu }}" style="display: {{ burgerDisplay }}; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 10px;">
+        <span style="width: 24px; height: 2px; background: #F4F1EA; display: block;"></span>
+        <span style="width: 24px; height: 2px; background: #F4F1EA; display: block;"></span>
+        <span style="width: 24px; height: 2px; background: #F4F1EA; display: block;"></span>
+      </button>
+    </div>
+    <div style="display: {{ menuDisplay }}; flex-direction: column; gap: 4px; background: rgba(11,32,51,0.98); border-bottom: 1px solid rgba(244,241,234,0.12); padding: 14px 32px 26px;">
+      <a href="#services" onClick="{{ closeMenu }}" style="font-size: 19px; font-weight: 500; color: #F4F1EA; padding: 13px 0;">Our Services</a>
+      <a href="#faq" onClick="{{ closeMenu }}" style="font-size: 19px; font-weight: 500; color: #F4F1EA; padding: 13px 0;">FAQ</a>
+      <a href="#news" onClick="{{ closeMenu }}" style="font-size: 19px; font-weight: 500; color: #F4F1EA; padding: 13px 0;">News</a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="margin-top: 10px; text-align: center; background: #5B3DF5; color: #F4F1EA; font-size: 17px; font-weight: 600; padding: 15px 26px; border-radius: 999px;">Contact Us</a>
+    </div>
+  </header>
+
+  </div>
+
+  <section id="top" style="position: relative;">
+    <x-import component-from-global-scope="WerkstacksHero" from="./animations-v3.jsx ./tweaks-panel.jsx ./banner-scene.jsx ./hero-mount.jsx" hint-size="100%,760px"></x-import>
+  </section>
+
+  <section id="services" style="border-top: 1px solid rgba(244,241,234,0.10);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: {{ secPad }}; display: grid; grid-template-columns: {{ secCols }}; gap: {{ secGap }}px; align-items: start;">
+
+      <div style="min-width: 0; display: flex; flex-direction: column; gap: 34px; position: {{ leftPos }}; top: 128px;">
+        <h2 style="margin: 0; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.03; font-weight: 700; letter-spacing: -0.035em; color: #F4F1EA; text-wrap: pretty;">Most companies don't have a data problem. They have a <span style="color: #5B3DF5;">structure problem.</span></h2>
+        <div style="display: flex; flex-direction: column; gap: 22px; font-size: 19px; line-height: 1.62; color: rgba(244,241,234,0.72); max-width: 46ch; text-wrap: pretty;">
+          <p style="margin: 0;">Numbers spread across spreadsheets, reports rebuilt by hand every month, metrics nobody fully trusts. Werkstacks turns scattered business data into systems people actually use to make decisions.</p>
+          <p style="margin: 0;">Our work covers the full path from raw data to results: preparing and validating messy data, defining KPIs that reflect what your business needs to know, building dashboards in Power BI and Excel, and automating the reporting that used to eat hours every week. Because our background is in engineering, we read what the data reveals about the underlying workflow and come back with concrete improvements, not just charts.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 6px;">
+          <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <span style="color: #5B3DF5; font-size: 18px; line-height: 1.5;">✓</span>
+            <span style="font-size: 18px; line-height: 1.5; color: rgba(244,241,234,0.9);">Hours back every week — reporting that runs itself</span>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <span style="color: #5B3DF5; font-size: 18px; line-height: 1.5;">✓</span>
+            <span style="font-size: 18px; line-height: 1.5; color: rgba(244,241,234,0.9);">Numbers everyone trusts — one validated source</span>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <span style="color: #5B3DF5; font-size: 18px; line-height: 1.5;">✓</span>
+            <span style="font-size: 18px; line-height: 1.5; color: rgba(244,241,234,0.9);">Decisions made in the meeting, not after it</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 16px; padding-top: 12px; border-top: 1px solid rgba(244,241,234,0.12);">
+          <img src="assets/founder.jpg" alt="Dennis Ramalingam" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; margin-top: 20px; flex-shrink: 0;" />
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 3px;">
+            <div style="font-size: 15px; font-weight: 600; color: #F4F1EA;">Dennis Ramalingam — Founder</div>
+            <div style="font-size: 13.5px; line-height: 1.45; color: rgba(244,241,234,0.5);">MBA Data-Driven Decision Making · B.Eng. Manufacturing &amp; Operations · 4+ yrs at Mercedes-Benz and Bosch</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+        <sc-for list="{{ services }}" as="svc" hint-placeholder-count="3">
+          <div style="background: #FBFAF7; border-radius: 10px; overflow: hidden; transition: box-shadow 0.2s ease;">
+            <button type="button" onClick="{{ svc.toggle }}" style="width: 100%; background: none; border: 0; padding: 30px 34px; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; text-align: left; font-family: inherit;">
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="font-size: 26px; font-weight: 700; letter-spacing: -0.02em; color: #0B2033;">{{ svc.title }}</div>
+              </div>
+              <div style="{{ svc.signStyle }}">{{ svc.sign }}</div>
+            </button>
+            <div style="{{ svc.panelStyle }}">
+              <div data-svc-panel="{{ svc.num }}" style="padding: 0 34px 32px; display: flex; flex-direction: column; gap: 18px;">
+                <p style="margin: 0; font-size: 17.5px; line-height: 1.6; color: rgba(11,32,51,0.72); max-width: 48ch; text-wrap: pretty;">{{ svc.desc }}</p>
+                <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 4px; border-top: 1px solid rgba(11,32,51,0.1);">
+                  <sc-for list="{{ svc.items }}" as="item" hint-placeholder-count="3">
+                    <div style="display: flex; align-items: flex-start; gap: 12px; padding-top: 8px;">
+                      <span style="width: 5px; height: 5px; border-radius: 50%; background: #5B3DF5; margin-top: 9px; flex-shrink: 0;"></span>
+                      <span style="font-size: 16.5px; line-height: 1.45; color: rgba(11,32,51,0.82);">{{ item }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+
+        <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 18px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: rgba(244,241,234,0.45);">WE WORK IN</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <span style="font-size: 15px; color: rgba(244,241,234,0.85); border: 1px solid rgba(244,241,234,0.22); border-radius: 999px; padding: 8px 17px;">Power BI</span>
+            <span style="font-size: 15px; color: rgba(244,241,234,0.85); border: 1px solid rgba(244,241,234,0.22); border-radius: 999px; padding: 8px 17px;">Excel</span>
+            <span style="font-size: 15px; color: rgba(244,241,234,0.85); border: 1px solid rgba(244,241,234,0.22); border-radius: 999px; padding: 8px 17px;">SQL</span>
+            <span style="font-size: 15px; color: rgba(244,241,234,0.85); border: 1px solid rgba(244,241,234,0.22); border-radius: 999px; padding: 8px 17px;">Python</span>
+            <span style="font-size: 15px; color: rgba(244,241,234,0.85); border: 1px solid rgba(244,241,234,0.22); border-radius: 999px; padding: 8px 17px;">VBA</span>
+          </div>
+          <div style="font-size: 16px; line-height: 1.6; color: rgba(244,241,234,0.55); max-width: 52ch;">For e-commerce, startups, professional services, manufacturing and established operations alike.</div>
+        </div>
+
+        <a href="#contact" style="margin-top: 22px; align-self: flex-start; background: #5B3DF5; color: #F4F1EA; font-size: 17px; font-weight: 600; padding: 17px 34px; border-radius: 999px; transition: background 0.18s ease, transform 0.18s ease;" style-hover="background: #6F55F7; transform: translateY(-1px);">Start with a free data audit</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="faq" style="border-top: 1px solid rgba(244,241,234,0.10);">
+    <div style="max-width: 1000px; margin: 0 auto; padding: {{ faqPad }};">
+      <h2 style="margin: 0 0 18px; text-align: center; font-size: clamp(34px, 4.4vw, 56px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em; color: #F4F1EA;">Frequently asked questions</h2>
+      <p style="margin: 0 auto 56px; max-width: 52ch; text-align: center; font-size: 18px; line-height: 1.6; color: rgba(244,241,234,0.6); text-wrap: pretty;">Everything clients usually ask before the first call.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <sc-for list="{{ faqs }}" as="qa" hint-placeholder-count="10">
+          <div style="background: #FBFAF7; border-radius: 14px; overflow: hidden;">
+            <button type="button" onClick="{{ qa.toggle }}" style="width: 100%; background: none; border: 0; padding: 26px 30px; display: flex; align-items: center; gap: 22px; cursor: pointer; text-align: left; font-family: inherit;">
+              <span style="flex: 1; font-size: 19.5px; font-weight: 600; letter-spacing: -0.01em; color: #0B2033; line-height: 1.35;">{{ qa.q }}</span>
+              <span style="{{ qa.iconStyle }}">+</span>
+            </button>
+            <div style="{{ qa.panelStyle }}">
+              <div data-faq-panel="{{ qa.idx }}" style="padding: 0 30px 28px;">
+                <p style="margin: 0; font-size: 17.5px; line-height: 1.62; color: rgba(11,32,51,0.72); max-width: 64ch; text-wrap: pretty;">{{ qa.a }}</p>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin-top: 64px; display: flex; flex-direction: column; align-items: center; gap: 22px;">
+        <div style="font-size: 22px; font-weight: 600; color: #F4F1EA;">Still have questions?</div>
+        <a href="#contact" style="background: #5B3DF5; color: #F4F1EA; font-size: 17px; font-weight: 600; padding: 17px 34px; border-radius: 999px; transition: background 0.18s ease, transform 0.18s ease;" style-hover="background: #6F55F7; transform: translateY(-1px);">Reach out</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" style="border-top: 1px solid rgba(244,241,234,0.10);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: {{ newsPad }};">
+
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-bottom: 54px;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <h2 style="margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em; color: #F4F1EA;">What we're watching</h2>
+        </div>
+        <a href="news.html" style="font-size: 16.5px; font-weight: 600; color: #5B3DF5; border-bottom: 1px solid rgba(91,61,245,0.45); padding-bottom: 2px;">See all briefs →</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: {{ newsCols }}; gap: {{ newsGap }}px;">
+        <sc-for list="{{ news }}" as="item" hint-placeholder-count="3">
+          <article style="{{ item.cardStyle }}">
+            <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: rgba(244,241,234,0.05);">
+              <image-slot id="{{ item.slotId }}" shape="rect" placeholder="{{ item.slotHint }}"></image-slot>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-top: 22px;">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: rgba(244,241,234,0.4);">{{ item.week }}</span>
+            </div>
+            <h3 style="margin: 14px 0 0; font-size: 24px; line-height: 1.24; font-weight: 700; letter-spacing: -0.02em; color: {{ item.headlineColor }}; text-wrap: pretty;">{{ item.headline }}</h3>
+            <p style="margin: 14px 0 0; font-size: 17px; line-height: 1.58; color: {{ item.teaserColor }}; text-wrap: pretty;">{{ item.teaser }}</p>
+            <div style="margin-top: 18px; font-size: 13.5px; color: rgba(244,241,234,0.35);">{{ item.sources }}</div>
+          </article>
+        </sc-for>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" style="border-top: 1px solid rgba(244,241,234,0.10);">
+    <div style="max-width: 760px; margin: 0 auto; padding: {{ contactPad }};">
+      <h2 style="margin: 0; text-align: center; font-size: clamp(34px, 4.6vw, 58px); line-height: 1.04; font-weight: 700; letter-spacing: -0.035em; color: #F4F1EA;">Let's look at your data</h2>
+      <p style="margin: 22px auto 0; max-width: 48ch; text-align: center; font-size: 19px; line-height: 1.62; color: rgba(244,241,234,0.66); text-wrap: pretty;">Start with a free data audit. Thirty minutes, no obligation — we map what you already have and tell you what's fixable.</p>
+
+      <div style="{{ formWrapStyle }}">
+        <form action="https://formspree.io/f/xzepwygb" method="POST" onSubmit="{{ onSubmit }}" style="margin-top: 52px; display: flex; flex-direction: column; gap: 16px;">
+          <input type="text" name="name" placeholder="Name" required="required" style="width: 100%; box-sizing: border-box; background: #FBFAF7; border: 1px solid transparent; border-radius: 10px; padding: 19px 22px; font-family: inherit; font-size: 17px; color: #0B2033; outline: none; transition: border-color 0.18s ease;" style-focus="border-color: #5B3DF5;" />
+          <input type="email" name="email" placeholder="Email" required="required" style="width: 100%; box-sizing: border-box; background: #FBFAF7; border: 1px solid transparent; border-radius: 10px; padding: 19px 22px; font-family: inherit; font-size: 17px; color: #0B2033; outline: none; transition: border-color 0.18s ease;" style-focus="border-color: #5B3DF5;" />
+          <input type="text" name="company" placeholder="Company" style="width: 100%; box-sizing: border-box; background: #FBFAF7; border: 1px solid transparent; border-radius: 10px; padding: 19px 22px; font-family: inherit; font-size: 17px; color: #0B2033; outline: none; transition: border-color 0.18s ease;" style-focus="border-color: #5B3DF5;" />
+          <div style="position: relative; width: 100%;">
+            <select name="service" required="required" style="width: 100%; box-sizing: border-box; background: #FBFAF7; border: 1px solid transparent; border-radius: 10px; padding: 19px 52px 19px 22px; font-family: inherit; font-size: 17px; color: #0B2033; outline: none; appearance: none; cursor: pointer;" style-focus="border-color: #5B3DF5;"><path d=%22M1 1l6 6 6-6%22 fill=%22none%22 stroke=%22rgba(11,32,51,0.55)%22 stroke-width=%222%22 stroke-linecap=%22round%22/></svg>'); background-repeat: no-repeat; background-position: right 22px center; padding-right: 52px; border: 1px solid transparent; border-radius: 10px; padding: 19px 22px; font-family: inherit; font-size: 17px; color: #0B2033; outline: none; appearance: none; cursor: pointer;" style-focus="border-color: #5B3DF5;">
+            <option value="">What do you need?</option>
+            <option value="Free data audit">Free data audit — not sure yet</option>
+            <option value="Data Analysis &amp; Testing">Data Analysis &amp; Testing</option>
+            <option value="Data Extraction / ETL">Data Extraction / ETL</option>
+            <option value="Data Mining &amp; Management">Data Mining &amp; Management</option>
+            <option value="Something else">Something else</option>
+          </select>
+            <svg width="14" height="9" viewBox="0 0 14 9" style="position: absolute; right: 22px; top: 50%; transform: translateY(-50%); pointer-events: none;">
+              <path d="M1 1l6 6 6-6" fill="none" stroke="rgba(11,32,51,0.55)" stroke-width="2" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <textarea name="message" rows="5" placeholder="What isn't working with your data? (optional)" style="width: 100%; box-sizing: border-box; background: #FBFAF7; border: 1px solid transparent; border-radius: 10px; padding: 19px 22px; font-family: inherit; font-size: 17px; line-height: 1.55; color: #0B2033; outline: none; resize: vertical; transition: border-color 0.18s ease;" style-focus="border-color: #5B3DF5;"></textarea>
+          <button type="submit" style="margin: 14px auto 0; background: #5B3DF5; color: #F4F1EA; font-family: inherit; font-size: 17px; font-weight: 600; padding: 18px 46px; border: 0; border-radius: 999px; cursor: pointer; transition: background 0.18s ease, transform 0.18s ease;" style-hover="background: #6F55F7; transform: translateY(-1px);">{{ submitLabel }}</button>
+          <div style="text-align: center; font-size: 14.5px; color: rgba(244,241,234,0.42);">We'll only use your details to reply.</div>
+        </form>
+      </div>
+
+      <div style="{{ thanksStyle }}">
+        <div style="width: 54px; height: 54px; border-radius: 50%; background: #5B3DF5; display: flex; align-items: center; justify-content: center; font-size: 26px; color: #F4F1EA;">✓</div>
+        <div style="font-size: 27px; font-weight: 700; letter-spacing: -0.02em; color: #F4F1EA;">Thanks — that's with us.</div>
+        <div style="max-width: 42ch; text-align: center; font-size: 17.5px; line-height: 1.6; color: rgba(244,241,234,0.62);">We'll come back to you within five days, usually much sooner. If it's urgent, call <a href="tel:+17868246815" style="color: #5B3DF5;">+1 (786) 824-6815</a>.</div>
+      </div>
+
+      <div style="margin-top: 54px; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 16.5px; color: rgba(244,241,234,0.5);">
+        <span>Rather talk?</span>
+        <a href="tel:+17868246815" style="color: #F4F1EA; font-family: 'IBM Plex Mono', monospace; font-size: 16px; letter-spacing: 0.03em; border-bottom: 1px solid rgba(244,241,234,0.3); padding-bottom: 2px;">+1 (786) 824-6815</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid rgba(244,241,234,0.10);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 40px {{ gut }}px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;">
+      <div style="font-size: 14.5px; color: rgba(244,241,234,0.42);">© 2026 Werkstacks Solutions · All rights reserved</div>
+      <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+        <a href="privacy.html" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Privacy Policy</a>
+        <a href="terms.html" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Terms &amp; Conditions</a>
+        <a href="#contact" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scrolled: false, open: -1, faqOpen: -1, sending: false, sent: false, vw: typeof window !== 'undefined' ? window.innerWidth : 1440, menu: false, heights: {} };
+  panels = {};
+
+  measurePanels = () => {
+    const h = {};
+    let changed = false;
+    document.querySelectorAll('[data-svc-panel]').forEach((el) => {
+      const i = parseInt(el.getAttribute('data-svc-panel'), 10) - 1;
+      h[i] = el.scrollHeight;
+      if (this.state.heights[i] !== h[i]) changed = true;
+    });
+    document.querySelectorAll('[data-faq-panel]').forEach((el) => {
+      const k = 'f' + el.getAttribute('data-faq-panel');
+      h[k] = el.scrollHeight;
+      if (this.state.heights[k] !== h[k]) changed = true;
+    });
+    if (changed) this.setState({ heights: h });
+  };
+
+
+
+  PLACEHOLDERS = [
+    { category: 'AI & Technology', headline: 'Headline goes here — paste it from your brief', teaser: 'Two or three sentences of your own commentary on what happened and what it means for operations and finance teams. See NEWS.md for the format.', sources: 'Sources credited here' },
+    { category: 'Data & Analytics', headline: 'Second topic headline', teaser: 'Your take on the second topic. Written in your words, with the outlet credited underneath rather than quoted.', sources: 'Sources credited here' },
+    { category: 'AI & Technology', headline: 'Third topic headline', teaser: 'The third of five topics from the weekly brief. The remaining two live on the archive page.', sources: 'Sources credited here' },
+  ];
+
+  FAQS = [
+    {
+      q: 'How does working with you actually work?',
+      a: 'A predictable path from first call to final delivery. We start with a discovery call to understand the problem, then run a free data audit where we map what you already have. You get a scoped proposal with a fixed plan, and once it is approved we build, with check-ins as it takes shape. At handover you receive documentation so your team can run it. Clear steps, clear communication, no surprises in between.',
+    },
+    {
+      q: 'What does it cost?',
+      a: 'We work hourly, and the rate ranges from $40 to $120 per hour depending on scope and the expertise the work needs. Every company has different needs, so we scope it together on the first call. You will know exactly what you are paying for before anything starts.',
+    },
+    {
+      q: 'Is the free data audit really free?',
+      a: 'Yes, free and non-binding. We look at your data, tell you what is fixable and what it would take, and you decide whether to go further. No obligation either way.',
+    },
+    {
+      q: 'What is your expertise?',
+      a: 'Data preparation and structuring, KPI and process analysis, dashboards in Power BI and Excel, Excel/VBA and Python automation, SQL and data modelling, and management reporting with concrete recommendations. We work across e-commerce, startups, professional services, manufacturing and established operations.',
+    },
+    {
+      q: 'Can you show past work?',
+      a: 'Two representative data analytics projects at a global automotive manufacturer: a headcount planning tool built in VBA and Power BI, and an analysis of group milling and cap change performance with Power BI reporting on top. We also delivered a software development project for a European insurer. On a call we walk you through how we approached each one.',
+    },
+    {
+      q: 'Is our data safe?',
+      a: 'We sign your NDA before any data is shared. Where possible we work on anonymized or sample data, and wherever your setup allows the data stays in your environment. We work inside your tools rather than moving anything somewhere else.',
+    },
+    {
+      q: 'How quickly will you respond?',
+      a: 'Within five days at the latest, usually much sooner. If you add some context about your situation to your first message, we can be far more useful on the first call.',
+    },
+    {
+      q: 'Where do you work?',
+      a: 'Mainly across the United States, and also in Germany and the rest of Europe. Remote by default, across both time zones, and we work in English and German.',
+    },
+    {
+      q: 'Is there a minimum project size?',
+      a: 'No. We deliberately start small: one report or one dashboard that proves the value, then expand from there once you can see what it does for you.',
+    },
+    {
+      q: 'Can you work with the dashboards we already have?',
+      a: 'Yes. Often the fastest win is fixing and automating what exists rather than rebuilding it. We review what you have, keep what works, and repair the structure underneath it.',
+    },
+  ];
+
+  SERVICES = [
+    {
+      title: 'Data Analysis & Testing',
+      desc: 'We define the KPIs that actually reflect how your business runs, then track them so trends and variances surface before they become problems.',
+      items: ['KPI definition and tracking', 'Trend and variance analysis', 'Power BI and Excel dashboards'],
+    },
+    {
+      title: 'Data Extraction / ETL',
+      desc: 'Your numbers live in different tools and none of them agree. We pull them together, clean them, and make the pipeline repeat itself on schedule.',
+      items: ['Multi-source data extraction', 'Data cleaning and validation', 'Excel/VBA and Python automation'],
+    },
+    {
+      title: 'Data Mining & Management',
+      desc: 'Structure underneath the reporting: one data model everyone works from, documented, with quality standards that hold as you grow.',
+      items: ['Database structuring and SQL queries', 'Pattern and root-cause analysis', 'Central data models and documentation'],
+    },
+  ];
+  componentDidMount() {
+    this.onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+
+    this.onResize = () => {
+      if (window.innerWidth !== this.state.vw) this.setState({ vw: window.innerWidth });
+      this.measurePanels();
+    };
+    window.addEventListener('resize', this.onResize);
+    this.measurePanels();
+    this.raf = requestAnimationFrame(this.measurePanels);
+
+    fetch('news.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (d && d.brief) this.setState({ brief: d.brief });
+      })
+      .catch(() => {});
+  }
+  componentDidUpdate() { this.measurePanels(); }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize);
+    cancelAnimationFrame(this.raf);
+  }
+  renderVals() {
+    const s = this.state.scrolled;
+    const vw = this.state.vw;
+    const narrow = vw < 900;
+    const mobile = vw < 720;
+    const brief = this.state.brief || {};
+    const fed = Array.isArray(brief.items) ? brief.items : [];
+    const empty = fed.length === 0;
+    const items = (empty ? this.PLACEHOLDERS : fed).slice(0, 3);
+    return {
+      navBg: s ? 1 : 0,
+      navH: s ? 68 : 92,
+      markScale: s ? 'scale(0.86)' : 'scale(1)',
+      promoH: s ? 0 : 48,
+      promoOpacity: s ? 0 : 1,
+      gut: mobile ? 24 : 48,
+      navDisplay: narrow ? 'none' : 'flex',
+      burgerDisplay: narrow ? 'flex' : 'none',
+      menuDisplay: narrow && this.state.menu ? 'flex' : 'none',
+      promoAsideDisplay: mobile ? 'none' : 'flex',
+      bookItDisplay: vw < 1100 ? 'none' : 'inline',
+      toggleMenu: () => this.setState({ menu: !this.state.menu }),
+      closeMenu: () => this.setState({ menu: false }),
+      secCols: narrow ? '1fr' : '1fr 1.06fr',
+      secGap: narrow ? 56 : 96,
+      secPad: mobile ? '96px 24px 104px' : '132px 48px 148px',
+      leftPos: narrow ? 'static' : 'sticky',
+      faqPad: mobile ? '96px 24px 104px' : '140px 48px 150px',
+      newsPad: mobile ? '96px 24px 104px' : '132px 48px 150px',
+      contactPad: mobile ? '96px 24px 104px' : '140px 48px 150px',
+      submitLabel: this.state.sending ? 'Sending…' : 'Send',
+      formWrapStyle: { display: this.state.sent ? 'none' : 'block' },
+      thanksStyle: {
+        display: this.state.sent ? 'flex' : 'none',
+        flexDirection: 'column', alignItems: 'center', gap: 20,
+        marginTop: 56, padding: '54px 34px',
+        background: 'rgba(244,241,234,0.04)',
+        border: '1px solid rgba(244,241,234,0.12)',
+        borderRadius: 14, textAlign: 'center',
+      },
+      onSubmit: (e) => {
+        e.preventDefault();
+        const form = e.target;
+        this.setState({ sending: true });
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        })
+          .then(() => this.setState({ sent: true, sending: false }))
+          .catch(() => this.setState({ sent: true, sending: false }));
+      },
+      newsCols: narrow ? '1fr' : 'repeat(3, 1fr)',
+      newsGap: narrow ? 48 : 44,
+      briefWeek: brief.week || 'Week 34 · 2026',
+      news: items.map((it, i) => {
+        return {
+          category: it.category,
+          headline: it.headline,
+          teaser: it.teaser,
+          sources: it.sources,
+          week: brief.week || 'Week 34 · 2026',
+          slotId: 'news-slot-' + i,
+          slotHint: 'Drop image ' + (i + 1),
+          headlineColor: empty ? 'rgba(244,241,234,0.42)' : '#F4F1EA',
+          teaserColor: empty ? 'rgba(244,241,234,0.3)' : 'rgba(244,241,234,0.66)',
+          cardStyle: {
+            display: 'flex', flexDirection: 'column', minWidth: 0,
+            paddingRight: narrow ? 0 : 28,
+            borderRight: !narrow && i < items.length - 1 ? '1px solid rgba(244,241,234,0.12)' : 'none',
+          },
+          tagStyle: {
+            fontFamily: "'IBM Plex Mono', monospace", fontSize: 11.5, letterSpacing: '0.14em',
+            textTransform: 'uppercase', color: '#5B3DF5',
+            border: '1px solid rgba(91,61,245,0.4)', borderRadius: 3, padding: '4px 9px',
+          },
+        };
+      }),
+      faqs: this.FAQS.map((qa, i) => {
+        const isOpen = this.state.faqOpen === i;
+        return {
+          q: qa.q,
+          a: qa.a,
+          idx: i,
+          iconStyle: {
+            fontSize: 30, fontWeight: 300, lineHeight: 1, flexShrink: 0,
+            color: isOpen ? '#5B3DF5' : 'rgba(11,32,51,0.5)',
+            transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
+            transition: 'transform 0.26s ease, color 0.2s ease',
+          },
+          panelStyle: {
+            maxHeight: isOpen ? (this.state.heights['f' + i] || 400) : 0,
+            opacity: isOpen ? 1 : 0,
+            overflow: 'hidden',
+            transition: 'max-height 0.32s ease, opacity 0.28s ease',
+          },
+          toggle: () => this.setState((s) => ({ faqOpen: s.faqOpen === i ? -1 : i })),
+        };
+      }),
+      services: this.SERVICES.map((sv, i) => ({
+        ...sv,
+        num: '0' + (i + 1),
+        sign: this.state.open === i ? '–' : '+',
+        panelStyle: {
+          maxHeight: this.state.open === i ? (this.state.heights[i] || 700) : 0,
+          opacity: this.state.open === i ? 1 : 0,
+          overflow: 'hidden',
+          transition: 'max-height 0.32s ease, opacity 0.28s ease',
+        },
+        signStyle: {
+          width: 38, height: 38, borderRadius: '50%',
+          background: this.state.open === i ? '#5B3DF5' : 'rgba(11,32,51,0.06)',
+          color: this.state.open === i ? '#F4F1EA' : '#0B2033',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          flexShrink: 0, fontSize: 22, fontWeight: 500, lineHeight: 1,
+          transition: 'background 0.2s ease, color 0.2s ease',
+        },
+        toggle: () => this.setState((s) => ({ open: s.open === i ? -1 : i })),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>
