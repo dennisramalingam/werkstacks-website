@@ -1,14 +1,11 @@
 /* Hero mount — the banner animation fitted into a website hero.
    Desktop: the composition cover-fills a full-viewport hero; its overlays are
    pushed down so the headline clears the fixed nav.
-   Mobile: a real DOM headline (readable at any size) sits above the animation,
-   which is width-fitted so the whole journey stays visible instead of cropped. */
+   Mobile: the SAME composition, just scaled down to fit the screen width whole —
+   headline, step labels and rail included, nothing cropped. */
 
 const BAR = 44;
 const MOBILE_AT = 820;
-/* On phones the composition is fitted to a 1400-wide window instead of the full
-   1920 — the action all sits centred, so the small crop buys real scale. */
-const MOBILE_FIT_W = 1400;
 
 function WerkstacksHero() {
   const { CompositionStage } = window;
@@ -41,9 +38,9 @@ function WerkstacksHero() {
       const isM = window.innerWidth <= MOBILE_AT;
       setMobile(isM);
       if (isM) {
-        const s = hw / MOBILE_FIT_W;
-        const w = 1920 * s, h = 1080 * s;
-        setBox({ w, h: h + BAR, left: (hw - w) / 2, top: 0, stripH: h });
+        // contain: the whole 16:9 frame fits the width, nothing cropped
+        const s = hw / 1920;
+        setBox({ w: hw, h: 1080 * s + BAR, left: 0, top: 0, stripH: 1080 * s });
       } else {
         if (!hh) return;
         const s = Math.max(hw / 1920, hh / 1080);
@@ -58,7 +55,7 @@ function WerkstacksHero() {
     return () => { ro.disconnect(); window.removeEventListener('resize', measure); };
   }, []);
 
-  const stage = (extra) => (
+  const stage = () => (
     <CompositionStage
       width={1920}
       height={1080}
@@ -66,44 +63,20 @@ function WerkstacksHero() {
       playback={window.OM_PLAYBACK}
       bg="#0B2033"
     >
-      <Piece accent={accent} showRail={!mobile} insetTop={mobile ? 0 : 104} {...extra} />
+      <Piece accent={accent} showRail={true} insetTop={mobile ? 0 : 104} />
     </CompositionStage>
   );
 
   if (mobile) {
     return (
       <div ref={hostRef} style={{
-        position: 'relative', width: '100%', background: '#0B2033',
-        overflow: 'hidden', padding: '164px 0 46px',
-        display: 'flex', flexDirection: 'column', gap: 40,
+        position: 'relative', width: '100%', background: '#0B2033', overflow: 'hidden',
+        paddingTop: 138, paddingBottom: 56,
       }}>
-        <div style={{ padding: '0 22px', display: 'flex', flexDirection: 'column', gap: 24 }}>
-          <div style={{
-            fontFamily: "'Outfit', system-ui, sans-serif", fontSize: 'clamp(36px, 11vw, 54px)',
-            fontWeight: 700, lineHeight: 1.02, letterSpacing: '-0.035em', color: '#F4F1EA',
-          }}>
-            Scattered data in.<br />
-            <span style={{ color: accent }}>Decisions out.</span>
-          </div>
-          <div>
-            <div style={{ width: 72, height: 4, background: accent, marginBottom: 16 }}></div>
-            <div style={{
-              fontFamily: "'Outfit', system-ui, sans-serif", fontSize: 26, fontWeight: 800,
-              letterSpacing: '-0.01em', color: '#F4F1EA', lineHeight: 1,
-            }}>WERKSTACKS</div>
-            <div style={{
-              fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, letterSpacing: '0.42em',
-              color: 'rgba(244,241,234,0.55)', marginTop: 7,
-            }}>SOLUTIONS</div>
-          </div>
-        </div>
-        <div style={{
-          position: 'relative', width: '100%',
-          height: box ? box.stripH : 300, overflow: 'hidden',
-        }}>
+        <div style={{ position: 'relative', width: '100%', height: box ? box.stripH : 220, overflow: 'hidden' }}>
           {box && ready ? (
-            <div style={{ position: 'absolute', left: box.left, top: 0, width: box.w, height: box.h }}>
-              {stage({ showHeadline: false, showLabels: false })}
+            <div style={{ position: 'absolute', left: 0, top: 0, width: box.w, height: box.h }}>
+              {stage()}
             </div>
           ) : null}
         </div>

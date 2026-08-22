@@ -31,6 +31,7 @@
   a { color: #F4F1EA; text-decoration: none; }
   a:hover { color: #5B3DF5; }
   section[id] { scroll-margin-top: 96px; }
+  @keyframes ws-marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 28px)); } }
 </style>
 <script>window.OM_SCENES = '[{"name":"Scatter","dur":3,"desc":"Loose data sheets drift in chaos; the camera drifts across them"},{"name":"Engine","dur":3.2,"desc":"The sheets are pulled into the Werkstacks engine block and processed"},{"name":"Dashboard","dur":3,"desc":"Clean data chips fly out and assemble a live dashboard with growing bars"},{"name":"Success","dur":5.6,"desc":"A trophy rises, the headline assembles, and the camera pulls back over the whole journey","nat":2.8}]';</script>
 <script>window.OM_PLAYBACK = '{"mode":"loop"}';</script>
@@ -48,7 +49,13 @@
     <div style="max-width: 1280px; margin: 0 auto; padding: 11px {{ gut }}px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 15px;">
       <div style="display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: nowrap;">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; background: rgba(11,32,51,0.28); padding: 4px 9px; border-radius: 3px;">NEW</span>
-        <span style="font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Free data audit for new clients — we map your scattered data in 30 minutes.</span>
+        <span style="display: {{ promoStaticDisplay }}; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Free data audit for new clients — we map your scattered data in 30 minutes.</span>
+        <div style="display: {{ promoMarqueeDisplay }}; flex: 1; min-width: 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%);">
+          <div style="display: flex; gap: 56px; width: max-content; animation: ws-marquee 17s linear infinite;">
+            <span style="font-weight: 500; white-space: nowrap;">Free data audit for new clients — we map your scattered data in 30 minutes.</span>
+            <span style="font-weight: 500; white-space: nowrap;">Free data audit for new clients — we map your scattered data in 30 minutes.</span>
+          </div>
+        </div>
         <a href="#contact" style="display: {{ bookItDisplay }}; color: #F4F1EA; border-bottom: 1px solid rgba(244,241,234,0.5); padding-bottom: 1px; white-space: nowrap;">Book it</a>
       </div>
       <div style="display: {{ promoAsideDisplay }}; align-items: center; gap: 20px; white-space: nowrap;">
@@ -92,7 +99,7 @@
   </div>
 
   <section id="top" style="position: relative;">
-    <x-import component-from-global-scope="WerkstacksHero" from="./animations-v3.jsx ./tweaks-panel.jsx ./banner-scene.jsx ./hero-mount.jsx" hint-size="100%,760px"></x-import>
+    <x-import component-from-global-scope="WerkstacksHero" from="./animations-v3.jsx?v=3 ./tweaks-panel.jsx?v=3 ./banner-scene.jsx?v=3 ./hero-mount.jsx?v=3" hint-size="100%,760px"></x-import>
   </section>
 
   <section id="services" style="border-top: 1px solid rgba(244,241,234,0.10);">
@@ -422,6 +429,8 @@ class Component extends DCLogic {
       burgerDisplay: narrow ? 'flex' : 'none',
       menuDisplay: narrow && this.state.menu ? 'flex' : 'none',
       promoAsideDisplay: mobile ? 'none' : 'flex',
+      promoStaticDisplay: mobile ? 'none' : 'inline',
+      promoMarqueeDisplay: mobile ? 'flex' : 'none',
       bookItDisplay: vw < 1100 ? 'none' : 'inline',
       toggleMenu: () => this.setState({ menu: !this.state.menu }),
       closeMenu: () => this.setState({ menu: false }),
