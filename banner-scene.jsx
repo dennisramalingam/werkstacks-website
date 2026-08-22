@@ -310,7 +310,7 @@ function Rail({ T, cues, accent, total }) {
   );
 }
 
-function Headline({ T, cues, accent, total }) {
+function Headline({ T, cues, accent, total, insetTop }) {
   const words = ['Scattered', 'data', 'in.'];
   const words2 = ['Decisions', 'out.'];
   const base = cues.Success + 0.75;
@@ -326,7 +326,7 @@ function Headline({ T, cues, accent, total }) {
   };
   const markP = MOTION.enter({ from: 0, to: 1, start: base + 0.5, end: base + 0.95 })(T);
   return (
-    <div style={{ position: 'absolute', left: 120, top: 222, width: 1200, opacity: fadeOut }}>
+    <div style={{ position: 'absolute', left: 120, top: 222 + (insetTop || 0), width: 1200, opacity: fadeOut }}>
       <div style={{
         fontSize: 84, fontWeight: 700, lineHeight: 1.0, letterSpacing: '-0.035em',
         color: PAPER, display: 'flex', flexWrap: 'wrap', columnGap: 20,
@@ -348,7 +348,7 @@ function Headline({ T, cues, accent, total }) {
 }
 
 /* ---------- the piece ---------- */
-function Piece({ accent, showRail }) {
+function Piece({ accent, showRail, insetTop, showHeadline, showLabels }) {
   const { T, CUES, authoredTotal } = useComposition();
   const total = authoredTotal;
 
@@ -407,9 +407,9 @@ function Piece({ accent, showRail }) {
           <Trophy T={T} cues={CUES} accent={accent} />
         </div>
 
-        <StepLabel T={T} cues={CUES} accent={accent} />
+        {showLabels === false ? null : <StepLabel T={T} cues={CUES} accent={accent} />}
         {showRail ? <Rail T={T} cues={CUES} accent={accent} total={total} /> : null}
-        <Headline T={T} cues={CUES} accent={accent} total={total} />
+        {showHeadline === false ? null : <Headline T={T} cues={CUES} accent={accent} total={total} insetTop={insetTop} />}
       </div>
     </div>
   );
