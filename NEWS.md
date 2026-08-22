@@ -1,51 +1,66 @@
 # Updating the Werkstacks Brief
 
-The news section on the homepage reads one file: **`news.json`**. Edit that file, commit, and the site updates. Nothing else to touch.
+Everything lives in one file: **`news.json`**. Edit it in GitHub, commit, done.
+The homepage shows the **3 newest topics as teasers**; the News page holds the **full articles**, newest week open, older weeks collapsed.
 
-## 1. Paste the brief
+---
 
-Open `news.json`. Each topic is one entry in `items`:
+## 1. The shape
 
 ```json
 {
   "brief": {
     "label": "Werkstacks Brief",
-    "week": "Week 34 · 2026",
-    "items": [
+    "weeks": [
       {
-        "category": "AI & Technology",
-        "headline": "AI financing is hitting its first real constraint",
-        "teaser": "Two or three sentences in our own words. What happened, and what it means for operations teams.",
-        "sources": "Reuters"
+        "week": "Week 36 · 2026",
+        "items": [
+          {
+            "id": "short-slug-for-the-link",
+            "category": "AI & Technology",
+            "headline": "One line, no emoji",
+            "teaser": "2–3 sentences for the homepage card.",
+            "images": ["assets/news/week36-1.jpg"],
+            "body": "One flowing text: what happened with the numbers, why it matters for an operations or finance team, and where the opening sits.",
+            "sources": "Reuters, Bloomberg"
+          }
+        ]
       }
     ]
   }
 }
 ```
 
-- `category` — `AI & Technology` or `Data & Analytics`. Not shown on the card; kept for the archive and for later automation.
-- `headline` — one line, no emoji.
-- `teaser` — 2–3 sentences, **written as your own commentary**, not copied from the source.
-- `sources` — outlet names, credited at the end of the card.
-
-The homepage shows the **first three** items. The rest appear on the archive page.
-
-Update `week` every time you publish.
+- **Newest week goes first** in `weeks`. Old weeks stay in the file — that's the archive.
+- 3 topics per week. Fewer is fine.
+- `id` — lowercase, hyphens, no spaces. It's the anchor the homepage teaser links to (`news.html#id`). If you omit it, one is generated from the headline.
+- `category` — `AI & Technology` or `Data & Analytics`.
+- `teaser` — the short homepage card text. `body` — the full text on the News page, one continuous paragraph (clipped to six lines until the reader hits “Read more”).
+- `sources` — plain outlet names, credited at the end.
 
 ## 2. Images
 
-Each of the three cards has its own drag-and-drop image slot. Drop an image once and it stays until you replace it — no weekly image work unless you want to refresh them.
+Real files in the repo — drag-and-drop in the design tool does **not** reach the live site.
+
+1. Put the pictures in `assets/news/` in the repository, named by week and topic: `week36-1.jpg`, `week36-2.jpg`, `week36-3.jpg`.
+2. Reference them in `images` exactly as `"assets/news/week36-1.jpg"`.
+3. One picture per topic. It is the picture on the news card and on the homepage teaser. Landscape, roughly 16:9, ≤ 400 KB each.
+4. No image? Leave `images` out — the card falls back to an empty frame.
 
 ## 3. The ChatGPT prompt
 
-Ask your Daily Business & Tech Brief to output the site format directly:
+Paste this under the brief it just wrote you:
 
-> Take today's brief and rewrite the top 5 topics as JSON matching this shape:
-> `{"category": "...", "headline": "...", "teaser": "...", "sources": "..."}`
-> Category must be either "AI & Technology" or "Data & Analytics". The teaser must be 2–3 sentences of original commentary aimed at operations and finance managers — do not copy phrasing from the source article. Name the outlets in `sources`.
+> From the topics above, pick the 3 most relevant for operations, data and finance managers and output **only** JSON in exactly this shape, nothing else:
+>
+> ```json
+> {"week": "Week NN · 2026", "items": [{"id": "", "category": "", "headline": "", "teaser": "", "images": [], "body": "", "sources": ""}]}
+> ```
+>
+> Rules: `category` is either "AI & Technology" or "Data & Analytics". `headline` is one line, no emoji, sentence case. `id` is a short lowercase hyphenated slug of the headline. `teaser` is 2–3 sentences of original commentary for a homepage card. `body` is one flowing paragraph of 5–8 sentences that covers what happened with the concrete figures, what it changes for an operations or finance team, and where the business opening sits — no headings, no bullet points, no bold lead-ins. `sources` is the outlet names as plain text. All prose must be rewritten in our own words — never copy phrasing from the source article. Leave `images` as an empty array.
 
-Paste the result into the `items` array.
+Then in `news.json`: add the returned object as the **first** entry of `weeks`, and fill in the `images` paths for the files you uploaded.
 
-## 4. A note on sourcing
+## 4. Sourcing
 
-Teasers are our own commentary with the outlet credited. Do not paste summaries written by the source publication — rewrite them. If an item has no original point of view to add, leave it out.
+Our own commentary with the outlet credited. Never paste a publisher's own summary. If a topic gives you nothing to add, drop it.

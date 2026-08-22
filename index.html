@@ -214,22 +214,28 @@
         <div style="display: flex; flex-direction: column; gap: 14px;">
           <h2 style="margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em; color: #F4F1EA;">What we're watching</h2>
         </div>
-        <a href="news.html" style="font-size: 16.5px; font-weight: 600; color: #5B3DF5; border-bottom: 1px solid rgba(91,61,245,0.45); padding-bottom: 2px;">See all briefs →</a>
+        <a href="{{ newsPageHref }}" style="font-size: 16.5px; font-weight: 600; color: #5B3DF5; border-bottom: 1px solid rgba(91,61,245,0.45); padding-bottom: 2px;">Read the full briefs →</a>
       </div>
 
       <div style="display: grid; grid-template-columns: {{ newsCols }}; gap: {{ newsGap }}px;">
         <sc-for list="{{ news }}" as="item" hint-placeholder-count="3">
-          <article style="{{ item.cardStyle }}">
+          <a href="{{ item.href }}" style="{{ item.cardStyle }}">
             <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: rgba(244,241,234,0.05);">
-              <image-slot id="{{ item.slotId }}" shape="rect" placeholder="{{ item.slotHint }}"></image-slot>
+              <sc-if value="{{ item.hasImage }}">
+                <div role="img" aria-label="{{ item.headline }}" style="{{ item.imageStyle }}"></div>
+              </sc-if>
+              <sc-if value="{{ item.noImage }}">
+                <image-slot id="{{ item.slotId }}" shape="rect" placeholder="{{ item.slotHint }}"></image-slot>
+              </sc-if>
             </div>
-            <div style="display: flex; align-items: center; gap: 12px; margin-top: 22px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-top: 22px; flex-wrap: wrap;">
               <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: rgba(244,241,234,0.4);">{{ item.week }}</span>
             </div>
             <h3 style="margin: 14px 0 0; font-size: 24px; line-height: 1.24; font-weight: 700; letter-spacing: -0.02em; color: {{ item.headlineColor }}; text-wrap: pretty;">{{ item.headline }}</h3>
             <p style="margin: 14px 0 0; font-size: 17px; line-height: 1.58; color: {{ item.teaserColor }}; text-wrap: pretty;">{{ item.teaser }}</p>
             <div style="margin-top: 18px; font-size: 13.5px; color: rgba(244,241,234,0.35);">{{ item.sources }}</div>
-          </article>
+            <span style="margin-top: 16px; font-size: 15.5px; font-weight: 600; color: #5B3DF5;">Read the full brief →</span>
+          </a>
         </sc-for>
       </div>
 
@@ -282,8 +288,8 @@
     <div style="max-width: 1280px; margin: 0 auto; padding: 40px {{ gut }}px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;">
       <div style="font-size: 14.5px; color: rgba(244,241,234,0.42);">© 2026 Werkstacks Solutions · All rights reserved</div>
       <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
-        <a href="privacy.html" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Privacy Policy</a>
-        <a href="terms.html" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Terms &amp; Conditions</a>
+        <a href="Werkstacks Privacy Policy.dc.html" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Privacy Policy</a>
+        <a href="Werkstacks Terms.dc.html" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Terms &amp; Conditions</a>
         <a href="#contact" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Contact</a>
       </div>
     </div>
@@ -399,7 +405,8 @@ class Component extends DCLogic {
     fetch('news.json')
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
-        if (d && d.brief) this.setState({ brief: d.brief });
+        const b = d && (d.brief || d);
+        if (b && (b.weeks || b.items)) this.setState({ brief: b });
       })
       .catch(() => {});
   }
@@ -415,9 +422,16 @@ class Component extends DCLogic {
     const narrow = vw < 900;
     const mobile = vw < 720;
     const brief = this.state.brief || {};
-    const fed = Array.isArray(brief.items) ? brief.items : [];
+    const weeks = Array.isArray(brief.weeks) && brief.weeks.length
+      ? brief.weeks
+      : (Array.isArray(brief.items) && brief.items.length ? [{ week: brief.week, items: brief.items }] : []);
+    const fed = [];
+    weeks.forEach((w) => (Array.isArray(w.items) ? w.items : []).forEach((it) => fed.push({ ...it, week: w.week })));
     const empty = fed.length === 0;
     const items = (empty ? this.PLACEHOLDERS : fed).slice(0, 3);
+    const dcMode = typeof window !== 'undefined' && /\.dc\.html/.test(window.location.pathname);
+    const newsPage = dcMode ? 'Werkstacks News Archive.dc.html' : 'news.html';
+    const slug = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 52);
     return {
       navBg: s ? 1 : 0,
       navH: s ? 68 : 92,
@@ -466,19 +480,30 @@ class Component extends DCLogic {
       newsCols: narrow ? '1fr' : 'repeat(3, 1fr)',
       newsGap: narrow ? 48 : 44,
       briefWeek: brief.week || 'Week 34 · 2026',
+      newsPageHref: newsPage,
       news: items.map((it, i) => {
+        const imgs = Array.isArray(it.images) ? it.images.filter(Boolean) : (it.image ? [it.image] : []);
+        const id = it.id || slug(it.headline) || 'topic-' + i;
         return {
           category: it.category,
           headline: it.headline,
           teaser: it.teaser,
           sources: it.sources,
-          week: brief.week || 'Week 34 · 2026',
+          week: it.week || brief.week || 'Week 34 · 2026',
+          href: newsPage + '#' + id,
+          imageStyle: imgs[0] ? {
+            position: 'absolute', inset: 0,
+            backgroundImage: 'url("' + imgs[0] + '")',
+            backgroundSize: 'cover', backgroundPosition: 'center',
+          } : { display: 'none' },
+          hasImage: imgs.length > 0,
+          noImage: imgs.length === 0,
           slotId: 'news-slot-' + i,
           slotHint: 'Drop image ' + (i + 1),
           headlineColor: empty ? 'rgba(244,241,234,0.42)' : '#F4F1EA',
           teaserColor: empty ? 'rgba(244,241,234,0.3)' : 'rgba(244,241,234,0.66)',
           cardStyle: {
-            display: 'flex', flexDirection: 'column', minWidth: 0,
+            display: 'flex', flexDirection: 'column', minWidth: 0, color: 'inherit',
             paddingRight: narrow ? 0 : 28,
             borderRight: !narrow && i < items.length - 1 ? '1px solid rgba(244,241,234,0.12)' : 'none',
           },

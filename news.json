@@ -1,7 +1,21 @@
 {
   "brief": {
     "label": "Werkstacks Brief",
-    "week": "Week 34 · 2026",
-    "items": []
+    "weeks": [
+      {
+        "week": "Week 35 · 2026",
+        "items": [
+          {
+            "id": "ai-financing-investor-capacity",
+            "category": "AI & Technology",
+            "headline": "AI's financing boom is hitting its first constraint: investor capacity",
+            "teaser": "AI infrastructure is increasingly being paid for with debt, and bond investors are starting to ask for more yield. The story is moving from capex to capital markets — which changes how fast ROI has to show up.",
+            "images": [],
+            "body": "U.S. technology companies are financing AI infrastructure with debt at a scale that changed inside a year: AI-related corporate bond issuance is running at roughly $220 billion in 2026 against about $12.5 billion in 2025, and investors are beginning to demand higher yields as their exposure grows — even from highly rated issuers. That turns AI from a software and capex story into a capital-markets story, and it moves the pressure to prove return on enormous data-centre investment out of the pitch deck and into operations. For anyone whose work lowers the cost of running that infrastructure — energy optimisation, cooling, capacity planning, hardware utilisation, data-centre operations — the value of that work goes up from here.",
+            "sources": "Reuters"
+          }
+        ]
+      }
+    ]
   }
 }
