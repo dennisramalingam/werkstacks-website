@@ -1,39 +1,39 @@
 {
-"brief": {
-"label": "Werkstacks Brief",
-"weeks": [
-{
-"week": "Week 35 · 2026",
-"items": [
-{
-"id": "ai-shifts-analytics-contracts-to-outcomes",
-"category": "AI & Technology",
-"headline": "AI shifts analytics contracts to outcomes",
-"teaser": "Artificial intelligence is changing how companies purchase analytics and operational support. Providers that demonstrate measurable savings can increasingly compete against larger firms without matching their headcount.",
-"images": [],
-"body": "Large outsourcing providers are replacing hourly billing with performance-based agreements as AI changes how enterprise work is delivered. Approximately 80% of contracts in Tata Consultancy Services' business-services division now emphasize measurable outcomes, while some customers are demanding prices 25% to 30% lower. Cognizant reportedly structured an agreement with Germany's Daimler Truck around shared AI savings, while E.ON's cloud-services arrangement reportedly links future payments to efficiency improvements. Mid-sized competitors Persistent Systems and Coforge increased quarterly revenue by 16% and approximately 33%, respectively, compared with growth of 1% to 3% at larger incumbents. Operations and finance teams are increasingly evaluating vendors according to reductions in reporting time, labor costs and processing delays. Werkstacks can respond with fixed-scope Excel automation, Power BI dashboards and workforce-planning projects built around defined baseline metrics. Monthly optimization retainers or performance-linked pricing can create recurring revenue without relying exclusively on billable hours.",
-"sources": "Reuters"
-},
-{
-"id": "germanys-factory-rebound-raises-demand-for-analytics",
-"category": "Data & Analytics",
-"headline": "Germany's factory rebound raises demand for analytics",
-"teaser": "German manufacturing activity has reached its strongest level in more than four years, even as the wider economy remains uneven. Companies increasing production without significantly expanding payroll will need better visibility into capacity, staffing and operational costs.",
-"images": [],
-"body": "Germany's preliminary manufacturing purchasing managers' index increased to 54.1 in August from 52.2 in July, its highest reading in 51 months, while the services index declined to 48.5 from 49.8. The broader composite index eased to 51.0 from 51.3, and overall employment stabilized after 26 consecutive months of declines. This divergence suggests manufacturers may expand output while remaining cautious about hiring, overtime and working capital. Operations teams will need clearer visibility into equipment utilization, shift coverage, supplier lead times and emerging production bottlenecks. Finance teams can connect production forecasts with labor expenses, inventory requirements and profitability scenarios to support better investment decisions. Werkstacks can offer rapid manufacturing analytics assessments followed by Power BI dashboards, equipment-effectiveness tracking and automated headcount planning. Targeting German manufacturers and their American subsidiaries creates a practical opening for cross-border analytics engagements.",
-"sources": "Reuters, S&P Global Market Intelligence"
-},
-{
-"id": "proprietary-data-commands-a-premium-in-ai-analytics",
-"category": "Data & Analytics",
-"headline": "Proprietary data commands a premium in AI analytics",
-"teaser": "A potential multibillion-dollar sale of analytics provider YipitData shows that exclusive, decision-ready information is becoming more valuable as generic AI capabilities spread. Businesses that organize fragmented operational and customer data can create defensible insights and recurring revenue.",
-"images": [],
-"body": "New York-based YipitData is exploring a potential sale valued at $2.5 billion to $3 billion while targeting approximately $280 million in annual recurring revenue and growing sales by more than 30%. The company serves major retailers including Walmart, Lowe's and Ulta Beauty by translating alternative datasets into intelligence on e-commerce, payments and consumer behavior. The proposed valuation represents approximately nine to eleven times recurring revenue, reflecting investor interest in information that competitors cannot easily reproduce. Operations teams can apply the same principle by combining internal sales, inventory, staffing and customer records into business-specific decision tools. Finance teams can use those integrated datasets to improve demand forecasts, monitor margins and identify underperforming products or channels earlier. Werkstacks can package data integration, automated KPI reporting and specialized benchmarking into repeatable services for manufacturers, retailers and e-commerce businesses. Over time, anonymized benchmarks created with appropriate client permission could support subscription offerings that remain differentiated even as general-purpose AI becomes widely available.",
-"sources": "Reuters, YipitData"
-}
-]
-}
-]
-}
+  "brief": {
+    "label": "Werkstacks Brief",
+    "weeks": [
+      {
+        "week": "Week 35 · 2026",
+        "items": [
+          {
+            "id": "ai-shifts-analytics-contracts-to-outcomes",
+            "category": "AI & Technology",
+            "headline": "AI shifts analytics contracts to outcomes",
+            "teaser": "Artificial intelligence is changing how companies purchase analytics and operational support. Providers that demonstrate measurable savings can increasingly compete against larger firms without matching their headcount.",
+            "images": [],
+            "body": "Large outsourcing providers are replacing hourly billing with performance-based agreements as AI changes how enterprise work is delivered. Approximately 80% of contracts in Tata Consultancy Services’ business-services division now emphasize measurable outcomes, while some customers are demanding prices 25% to 30% lower. U.S.-listed Cognizant reportedly structured an agreement with Germany’s Daimler Truck around shared AI savings, while E.ON’s cloud-services arrangement reportedly links future payments to efficiency improvements. Mid-sized competitors Persistent Systems and Coforge increased quarterly revenue by 16% and approximately 33%, respectively, compared with growth of 1% to 3% at larger incumbents. Operations and finance teams are increasingly evaluating vendors according to reductions in reporting time, labor costs and processing delays. Werkstacks can respond with fixed-scope Excel automation, Power BI dashboards and workforce-planning projects built around defined baseline metrics. Monthly optimization retainers or performance-linked pricing can create recurring revenue without relying exclusively on billable hours.",
+            "sources": "Reuters"
+          },
+          {
+            "id": "germanys-factory-rebound-raises-demand-for-analytics",
+            "category": "Data & Analytics",
+            "headline": "Germany’s factory rebound raises demand for analytics",
+            "teaser": "German manufacturing activity has reached its strongest level in more than four years, even as the wider economy remains uneven. Companies increasing production without significantly expanding payroll will need better visibility into capacity, staffing and operational costs.",
+            "images": [],
+            "body": "Germany’s preliminary manufacturing purchasing managers’ index increased to 54.1 in August from 52.2 in July, its highest reading in 51 months, while the services index declined to 48.5 from 49.8. The broader composite index eased to 51.0 from 51.3, and overall employment stabilized after 26 consecutive months of declines. This divergence suggests manufacturers may expand output while remaining cautious about hiring, overtime and working capital. Operations teams will need clearer visibility into equipment utilization, shift coverage, supplier lead times and emerging production bottlenecks. Finance teams can connect production forecasts with labor expenses, inventory requirements and profitability scenarios to support better investment decisions. Werkstacks can offer rapid manufacturing analytics assessments followed by Power BI dashboards, equipment-effectiveness tracking and automated headcount planning. Targeting German manufacturers and their American subsidiaries creates a practical opening for cross-border analytics engagements.",
+            "sources": "Reuters, S&P Global Market Intelligence"
+          },
+          {
+            "id": "proprietary-data-commands-a-premium-in-ai-analytics",
+            "category": "Data & Analytics",
+            "headline": "Proprietary data commands a premium in AI analytics",
+            "teaser": "A potential multibillion-dollar sale of analytics provider YipitData shows that exclusive, decision-ready information is becoming more valuable as generic AI capabilities spread. Businesses that organize fragmented operational and customer data can create defensible insights and recurring revenue.",
+            "images": [],
+            "body": "New York-based YipitData is exploring a potential sale valued at $2.5 billion to $3 billion while targeting approximately $280 million in annual recurring revenue and growing sales by more than 30%. The company serves major retailers including Walmart, Lowe’s and Ulta Beauty by translating alternative datasets into intelligence on e-commerce, payments and consumer behavior. The proposed valuation represents approximately nine to eleven times recurring revenue, reflecting investor interest in information that competitors cannot easily reproduce. Operations teams can apply the same principle by combining internal sales, inventory, staffing and customer records into business-specific decision tools. Finance teams can use those integrated datasets to improve demand forecasts, monitor margins and identify underperforming products or channels earlier. Werkstacks can package data integration, automated KPI reporting and specialized benchmarking into repeatable services for manufacturers, retailers and e-commerce businesses. Over time, anonymized benchmarks created with appropriate client permission could support subscription offerings that remain differentiated even as general-purpose AI becomes widely available.",
+            "sources": "Reuters, YipitData"
+          }
+        ]
+      }
+    ]
+  }
 }
