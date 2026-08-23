@@ -1,66 +1,105 @@
 # Updating the Werkstacks Brief
 
-Everything lives in one file: **`news.json`**. Edit it in GitHub, commit, done.
-The homepage shows the **3 newest topics as teasers**; the News page holds the **full articles**, newest week open, older weeks collapsed.
+Both the homepage teasers and the News page read one file: **`news.json`** in the repo root.
+You never rewrite it — each week you **insert one new week block at the top**. Everything below it
+stays on the News page as the archive.
 
----
-
-## 1. The shape
+## The shape
 
 ```json
 {
   "brief": {
     "label": "Werkstacks Brief",
     "weeks": [
-      {
-        "week": "Week 36 · 2026",
-        "items": [
-          {
-            "id": "short-slug-for-the-link",
-            "category": "AI & Technology",
-            "headline": "One line, no emoji",
-            "teaser": "2–3 sentences for the homepage card.",
-            "images": ["assets/news/week36-1.jpg"],
-            "body": "One flowing text: what happened with the numbers, why it matters for an operations or finance team, and where the opening sits.",
-            "sources": "Reuters, Bloomberg"
-          }
-        ]
-      }
+      { "week": "Week 35 · 2026", "items": [ ... ] },
+      { "week": "Week 34 · 2026", "items": [ ... ] }
     ]
   }
 }
 ```
 
-- **Newest week goes first** in `weeks`. Old weeks stay in the file — that's the archive.
-- 3 topics per week. Fewer is fine.
-- `id` — lowercase, hyphens, no spaces. It's the anchor the homepage teaser links to (`news.html#id`). If you omit it, one is generated from the headline.
-- `category` — `AI & Technology` or `Data & Analytics`.
-- `teaser` — the short homepage card text. `body` — the full text on the News page, one continuous paragraph (clipped to six lines until the reader hits “Read more”).
-- `sources` — plain outlet names, credited at the end.
+`weeks` is newest-first. Everything in it is shown; the News page displays the 12 newest cards and
+puts the rest behind “Show older briefs”. The homepage shows the 3 newest as teasers.
 
-## 2. Images
+### One item
 
-Real files in the repo — drag-and-drop in the design tool does **not** reach the live site.
+```json
+{
+  "id": "short-hyphenated-slug",
+  "category": "AI & Technology",
+  "headline": "One line, sentence case",
+  "teaser": "Two or three sentences. This is the homepage card text.",
+  "images": ["assets/news/week35-1.jpg"],
+  "body": "One flowing paragraph of five to eight sentences: what happened with the concrete figures, what it changes for an operations or finance team, and where the business opening sits.",
+  "sources": "Reuters, S&P Global"
+}
+```
 
-1. Put the pictures in `assets/news/` in the repository, named by week and topic: `week36-1.jpg`, `week36-2.jpg`, `week36-3.jpg`.
-2. Reference them in `images` exactly as `"assets/news/week36-1.jpg"`.
-3. One picture per topic. It is the picture on the news card and on the homepage teaser. Landscape, roughly 16:9, ≤ 400 KB each.
-4. No image? Leave `images` out — the card falls back to an empty frame.
+- `category` must be exactly `AI & Technology` or `Data & Analytics` (the filter pills depend on it).
+- `id` is what the homepage teaser links to. Keep it unique across all weeks.
+- `images` holds one picture path. Leave it `[]` and the card shows a neutral pattern instead.
 
-## 3. The ChatGPT prompt
+## Weekly routine (5 minutes)
 
-Paste this under the brief it just wrote you:
+1. Run the prompt below in ChatGPT. It returns **one week block only** — not the whole file.
+2. Save the pictures as `assets/news/week<NN>-1.jpg`, `-2.jpg`, `-3.jpg` (upload them to
+   `assets/news/` in GitHub) and put each path into that item's `images` array.
+3. Open `news.json` in GitHub → pencil icon. Put your cursor right after `"weeks": [` and paste the
+   new block, followed by a comma. Leave every older block untouched.
+4. Commit. The live site picks it up within a minute.
 
-> From the topics above, pick the 3 most relevant for operations, data and finance managers and output **only** JSON in exactly this shape, nothing else:
+So after pasting, the file starts like this:
+
+```json
+"weeks": [
+  { "week": "Week 36 · 2026", "items": [ ... ] },   ← pasted
+  { "week": "Week 35 · 2026", "items": [ ... ] },   ← was already there
+```
+
+If the page goes blank after an edit, the JSON has a syntax error — almost always a missing or extra
+comma between week blocks. Paste the file into jsonlint.com to find it.
+
+## The ChatGPT prompt
+
+> Create the Werkstacks Brief using current, reputable reporting and primary sources from the most
+> recent seven days. Prioritize data analytics, business intelligence, AI and technology within
+> Werkstacks' scope, including Power BI, Excel automation, dashboards, operational analytics,
+> workforce planning, process optimization, manufacturing and supply chains. Include consumer trends,
+> markets and economic developments when they create clear analytics-related business opportunities.
+> Favor actionable opportunities, emerging trends before they become mainstream, deep industry shifts
+> and major breaking developments. Balance coverage between the United States and Germany/Europe.
+> Avoid repeating story angles from the previous editions listed below.
+>
+> Create exactly three distinct articles for the current ISO calendar week.
+>
+> Return only valid, pretty-printed JSON containing a single week object in exactly this structure —
+> no wrapper, no "brief" key, no other weeks:
 >
 > ```json
-> {"week": "Week NN · 2026", "items": [{"id": "", "category": "", "headline": "", "teaser": "", "images": [], "body": "", "sources": ""}]}
+> {
+>   "week": "Week NN · YYYY",
+>   "items": [
+>     { "id": "", "category": "", "headline": "", "teaser": "", "images": [], "body": "", "sources": "" }
+>   ]
+> }
 > ```
 >
-> Rules: `category` is either "AI & Technology" or "Data & Analytics". `headline` is one line, no emoji, sentence case. `id` is a short lowercase hyphenated slug of the headline. `teaser` is 2–3 sentences of original commentary for a homepage card. `body` is one flowing paragraph of 5–8 sentences that covers what happened with the concrete figures, what it changes for an operations or finance team, and where the business opening sits — no headings, no bullet points, no bold lead-ins. `sources` is the outlet names as plain text. All prose must be rewritten in our own words — never copy phrasing from the source article. Leave `images` as an empty array.
+> Replace NN and YYYY with the correct current ISO week number and ISO year. Each id must be a short
+> lowercase hyphenated slug based on its headline. Each category must be exactly "AI & Technology" or
+> "Data & Analytics". Each headline must be one line in sentence case without emoji. Each teaser must
+> contain two or three sentences of original commentary suitable for a homepage card. Each body must
+> be one continuous paragraph of five to eight sentences explaining what happened, concrete verified
+> figures, implications for operations or finance teams, and the practical business opening for
+> Werkstacks. Each images value must be an empty array. Each sources value must contain outlet or
+> source names only as plain text, separated by commas when necessary.
+>
+> Rewrite all prose in original language without copying source wording. Use plain text only
+> throughout the JSON. Do not include Markdown, code fences, markdown links, URLs, inline citations,
+> headings, bullet points, bold text or HTML entities. Write literal ampersands as & and never as
+> &amp;. Use straight apostrophes. Output nothing before or after the JSON object.
+>
+> Headlines already published, do not repeat these angles:
+> [paste the headlines currently in news.json]
 
-Then in `news.json`: add the returned object as the **first** entry of `weeks`, and fill in the `images` paths for the files you uploaded.
-
-## 4. Sourcing
-
-Our own commentary with the outlet credited. Never paste a publisher's own summary. If a topic gives you nothing to add, drop it.
+That last line is what keeps the weeks from overlapping — ChatGPT cannot see your repo, so give it
+the existing headlines rather than asking it to remember previous editions.

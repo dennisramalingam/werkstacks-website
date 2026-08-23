@@ -288,8 +288,8 @@
     <div style="max-width: 1280px; margin: 0 auto; padding: 40px {{ gut }}px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;">
       <div style="font-size: 14.5px; color: rgba(244,241,234,0.42);">© 2026 Werkstacks Solutions · All rights reserved</div>
       <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
-        <a href="Werkstacks Privacy Policy.dc.html" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Privacy Policy</a>
-        <a href="Werkstacks Terms.dc.html" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Terms &amp; Conditions</a>
+        <a href="{{ privacyHref }}" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Privacy Policy</a>
+        <a href="{{ termsHref }}" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Terms &amp; Conditions</a>
         <a href="#contact" style="font-size: 15px; color: rgba(244,241,234,0.6);" style-hover="color: #F4F1EA;">Contact</a>
       </div>
     </div>
@@ -431,6 +431,8 @@ class Component extends DCLogic {
     const items = (empty ? this.PLACEHOLDERS : fed).slice(0, 3);
     const dcMode = typeof window !== 'undefined' && /\.dc\.html/.test(window.location.pathname);
     const newsPage = dcMode ? 'Werkstacks News Archive.dc.html' : 'news.html';
+    const privacyHref = dcMode ? 'Werkstacks Privacy Policy.dc.html' : 'privacy.html';
+    const termsHref = dcMode ? 'Werkstacks Terms.dc.html' : 'terms.html';
     const slug = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 52);
     return {
       navBg: s ? 1 : 0,
@@ -481,6 +483,8 @@ class Component extends DCLogic {
       newsGap: narrow ? 48 : 44,
       briefWeek: brief.week || 'Week 34 · 2026',
       newsPageHref: newsPage,
+      privacyHref,
+      termsHref,
       news: items.map((it, i) => {
         const imgs = Array.isArray(it.images) ? it.images.filter(Boolean) : (it.image ? [it.image] : []);
         const id = it.id || slug(it.headline) || 'topic-' + i;
