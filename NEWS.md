@@ -56,8 +56,6 @@ Paste this under the brief it just wrote you:
 > ```json
 > {"week": "Week NN · 2026", "items": [{"id": "", "category": "", "headline": "", "teaser": "", "images": [], "body": "", "sources": ""}]}
 > ```
-
-> Hard rules for the JSON: plain text only — no markdown links, no `[Reuters](url)`, no bold, no headings, no HTML entities (write `&`, not `&amp;`). Credit outlets only in `sources`. Wrap the week in `{"brief": {"label": "Werkstacks Brief", "weeks": [ …newest week first… ]}}`.
 >
 > Rules: `category` is either "AI & Technology" or "Data & Analytics". `headline` is one line, no emoji, sentence case. `id` is a short lowercase hyphenated slug of the headline. `teaser` is 2–3 sentences of original commentary for a homepage card. `body` is one flowing paragraph of 5–8 sentences that covers what happened with the concrete figures, what it changes for an operations or finance team, and where the business opening sits — no headings, no bullet points, no bold lead-ins. `sources` is the outlet names as plain text. All prose must be rewritten in our own words — never copy phrasing from the source article. Leave `images` as an empty array.
 
