@@ -118,6 +118,14 @@ class Component extends DCLogic {
     },
   ];
 
+  // ChatGPT keeps emitting HTML entities; decode them rather than trip on them
+  txt(s) {
+    return String(s == null ? '' : s)
+      .replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ')
+      .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+      .replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  }
+
   slug(s) {
     return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 52);
   }
@@ -208,11 +216,11 @@ class Component extends DCLogic {
         const img = (Array.isArray(it.images) ? it.images.filter(Boolean)[0] : it.image) || '';
         return {
           id: it.id,
-          category: it.category || '',
-          week: it.week || '',
-          headline: it.headline || '',
-          body: it.body || it.what || it.teaser || '',
-          sources: it.sources || '',
+          category: this.txt(it.category),
+          week: this.txt(it.week),
+          headline: this.txt(it.headline),
+          body: this.txt(it.body || it.what || it.teaser),
+          sources: this.txt(it.sources),
           titleSize: open && !mobile ? '32px' : '25px',
           toggleLabel: open ? 'Show less' : 'Read more',
           toggle: () => this.setState({ open: open ? null : it.id }),

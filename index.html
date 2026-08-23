@@ -434,6 +434,11 @@ class Component extends DCLogic {
     const privacyHref = dcMode ? 'Werkstacks Privacy Policy.dc.html' : 'privacy.html';
     const termsHref = dcMode ? 'Werkstacks Terms.dc.html' : 'terms.html';
     const slug = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 52);
+    // ChatGPT keeps emitting HTML entities; decode them rather than trip on them
+    const txt = (s) => String(s == null ? '' : s)
+      .replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ')
+      .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+      .replace(/&lt;/g, '<').replace(/&gt;/g, '>');
     return {
       navBg: s ? 1 : 0,
       navH: s ? 68 : 92,
@@ -489,11 +494,11 @@ class Component extends DCLogic {
         const imgs = Array.isArray(it.images) ? it.images.filter(Boolean) : (it.image ? [it.image] : []);
         const id = it.id || slug(it.headline) || 'topic-' + i;
         return {
-          category: it.category,
-          headline: it.headline,
-          teaser: it.teaser,
-          sources: it.sources,
-          week: it.week || brief.week || 'Week 34 · 2026',
+          category: txt(it.category),
+          headline: txt(it.headline),
+          teaser: txt(it.teaser),
+          sources: txt(it.sources),
+          week: txt(it.week || brief.week || 'Week 34 · 2026'),
           href: newsPage + '#' + id,
           imageStyle: imgs[0] ? {
             position: 'absolute', inset: 0,
