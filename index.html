@@ -88,11 +88,11 @@
         <span style="width: 24px; height: 2px; background: #F4F1EA; display: block;"></span>
       </button>
     </div>
-    <div style="display: {{ menuDisplay }}; flex-direction: column; gap: 4px; background: rgba(11,32,51,0.98); border-bottom: 1px solid rgba(244,241,234,0.12); padding: 14px 32px 26px;">
-      <a href="#services" onClick="{{ closeMenu }}" style="font-size: 19px; font-weight: 500; color: #F4F1EA; padding: 13px 0;">Our Services</a>
-      <a href="#faq" onClick="{{ closeMenu }}" style="font-size: 19px; font-weight: 500; color: #F4F1EA; padding: 13px 0;">FAQ</a>
-      <a href="#news" onClick="{{ closeMenu }}" style="font-size: 19px; font-weight: 500; color: #F4F1EA; padding: 13px 0;">News</a>
-      <a href="#contact" onClick="{{ closeMenu }}" style="margin-top: 10px; text-align: center; background: #5B3DF5; color: #F4F1EA; font-size: 17px; font-weight: 600; padding: 15px 26px; border-radius: 999px;">Contact Us</a>
+    <div style="position: relative; z-index: 2; display: {{ menuDisplay }}; flex-direction: column; gap: 4px; background: #0B2033; border-bottom: 1px solid rgba(244,241,234,0.12); padding: 14px 32px 26px;">
+      <a href="#services" onClick="{{ goServices }}" style="font-size: 19px; font-weight: 500; color: #F4F1EA; padding: 13px 0;">Our Services</a>
+      <a href="#faq" onClick="{{ goFaq }}" style="font-size: 19px; font-weight: 500; color: #F4F1EA; padding: 13px 0;">FAQ</a>
+      <a href="#news" onClick="{{ goNews }}" style="font-size: 19px; font-weight: 500; color: #F4F1EA; padding: 13px 0;">News</a>
+      <a href="#contact" onClick="{{ goContact }}" style="margin-top: 10px; text-align: center; background: #5B3DF5; color: #F4F1EA; font-size: 17px; font-weight: 600; padding: 15px 26px; border-radius: 999px;">Contact Us</a>
     </div>
   </header>
 
@@ -410,7 +410,26 @@ class Component extends DCLogic {
       })
       .catch(() => {});
   }
-  componentDidUpdate() { this.measurePanels(); }
+  componentDidUpdate() {
+    this.measurePanels();
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = this.state.menu ? 'hidden' : '';
+    }
+  }
+  navTo = (hash) => (e) => {
+    if (e) { e.preventDefault(); e.stopPropagation(); }
+    const jump = () => {
+      const el = document.querySelector(hash);
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - 78;
+      try { window.scrollTo({ top: top, behavior: 'smooth' }); }
+      catch (err) { window.scrollTo(0, top); }
+    };
+    if (this.state.menu) {
+      document.body.style.overflow = '';
+      this.setState({ menu: false }, () => requestAnimationFrame(jump));
+    } else jump();
+  }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onScroll);
     window.removeEventListener('resize', this.onResize);
@@ -455,6 +474,10 @@ class Component extends DCLogic {
       bookItDisplay: vw < 1100 ? 'none' : 'inline',
       toggleMenu: () => this.setState({ menu: !this.state.menu }),
       closeMenu: () => this.setState({ menu: false }),
+      goServices: this.navTo('#services'),
+      goFaq: this.navTo('#faq'),
+      goNews: this.navTo('#news'),
+      goContact: this.navTo('#contact'),
       secCols: narrow ? '1fr' : '1fr 1.06fr',
       secGap: narrow ? 56 : 96,
       secPad: mobile ? '96px 24px 104px' : '132px 48px 148px',
