@@ -1,0 +1,35 @@
+# Werkstacks Solutions
+
+> Werkstacks Solutions is a data analytics consultancy that turns scattered business data into dashboards, reporting and automation that operations and finance teams actually use. Remote-first, working across the United States, Germany and the rest of Europe, in English and German.
+
+Not to be confused with Werkstack GmbH (werkstack.dev), an unrelated German company that builds Jira and Confluence apps.
+
+## What Werkstacks does
+
+- **Free data audit** — a non-binding review that maps the data a company already has, what is fixable, and what it would take. No obligation either way.
+- **Dashboards and reporting** — Power BI and Excel dashboards built on a structured data model, with automated refresh, plus management reporting with concrete recommendations.
+- **Automation** — Excel/VBA and Python automation that removes manual reporting work.
+- **Data foundations** — data preparation and structuring, SQL and data modelling, KPI and process analysis.
+
+## How engagements work
+
+A discovery call, then the free data audit, then a scoped proposal. Delivery runs in short increments so clients see progress early, and handover includes documentation so the client's own team can run it. Work is hourly, $40–$120 per hour depending on scope and expertise required. There is no minimum project size — engagements deliberately start with one report or one dashboard that proves the value.
+
+## Data handling
+
+An NDA is signed before any data is shared. Where possible the work uses anonymized or sample data, and wherever the client's setup allows, data stays in the client's own environment.
+
+## Pages
+
+- [Homepage](https://www.werkstacks.com/): services, process, FAQ, contact.
+- [Werkstacks Brief](https://www.werkstacks.com/news.html): weekly archive on data, operations and AI developments and what they mean for operations and finance teams.
+- [Privacy policy](https://www.werkstacks.com/privacy.html)
+- [Terms](https://www.werkstacks.com/terms.html)
+
+## Profiles
+
+- Upwork agency: https://www.upwork.com/agencies/2090887734364695543/
+
+## Contact
+
+Phone: +1 (786) 824-6815. Contact form on the homepage. Response within five days at the latest, usually sooner.
