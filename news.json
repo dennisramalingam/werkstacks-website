@@ -3,6 +3,38 @@
     "label": "Werkstacks Brief",
     "weeks": [
       {
+        "week": "Week 35 · 2026",
+        "items": [
+        {
+        "id": "excel-makes-ai-workbooks-auditable",
+        "category": "Data & Analytics",
+        "headline": "Excel makes AI-assisted workbooks auditable",
+        "teaser": "Excel's latest Copilot update adds change history, reusable chats and richer chart, PivotTable and Python workflows. The opportunity is shifting from building one-off spreadsheets to making AI-assisted workbooks controlled, testable and ready for Power BI.",
+        "images": [],
+        "body": "Microsoft's August 25 Excel release added four Copilot capability groups across Windows, Mac and web: change history, chat history, chart and PivotTable tools, and a Python skill for Insiders. The change-history skill can identify editors, explain human and AI changes, undo selected edits and restore earlier formulas, while commercial Microsoft 365 Copilot users can reopen previous Excel chats. New chart and PivotTable tools accelerate summaries and visualizations, and the preview Python skill creates editable, refreshable formulas for more advanced analysis. For operations teams, this shortens the path from weekly source data to exception reports but also increases the need to validate formulas, permissions and refresh logic. Finance teams gain a clearer audit trail for forecast and planning workbooks, provided ownership and review rules are defined. Werkstacks can offer Copilot-readiness audits that standardize tables, strengthen Power Query inputs and create governed KPI templates before clients activate AI features. A second opening is a managed workbook modernization service that tests AI-generated changes against control totals and promotes stable models into Power BI.",
+        "sources": "Microsoft"
+        },
+        {
+        "id": "anthropic-connects-ai-agents-to-factory-equipment",
+        "category": "AI & Technology",
+        "headline": "Anthropic connects AI agents to factory equipment",
+        "teaser": "Anthropic's Model Hardware Standard targets one of industrial automation's least visible bottlenecks: incompatible equipment interfaces. If the early results hold, manufacturers could connect machines faster, but safety limits and human approval will become part of the data architecture.",
+        "images": [],
+        "body": "Anthropic opened a research preview of the Model Hardware Standard on August 27, introducing a model-agnostic specification that lets AI agents discover and operate programmable microscopes, liquid handlers, robotic arms and other devices through shared drivers. The company says hardware integrations that normally take weeks or months can be reduced to hours or minutes, while three control paths support MCP, command-line and API-based operation. One microscopy team replaced seven separate startup programs with a one-click dashboard, while QuEra reported that an earlier bespoke script recovered a laser lock 58% of the time in about 150 seconds and its MHS-assisted controller ultimately achieved 99.3% recovery without human intervention. Operations teams would need live equipment states, exception thresholds and approval logs before allowing agents to alter parameters. Finance teams can evaluate payback through integration hours avoided, higher uptime, scrap reduction and fewer specialist callouts rather than treating physical AI as a generic software purchase. Werkstacks can enter at the measurement layer by mapping machine data, defining OEE and quality baselines, and building Power BI dashboards that compare assisted and manual workflows. A practical first offer is a low-risk pilot focused on monitoring and anomaly escalation, leaving autonomous control behind human review until performance and safety evidence mature.",
+        "sources": "Anthropic, Reuters"
+        },
+        {
+        "id": "lidl-owner-commits-billions-to-sovereign-cloud",
+        "category": "AI & Technology",
+        "headline": "Lidl owner commits €5.6 billion to sovereign cloud",
+        "teaser": "Schwarz Group is treating digital infrastructure as a second business beside retail, with a German data center designed for cloud and AI workloads under local law. The move signals a growing market for European data migrations, governance and reporting layers that smaller companies cannot build alone.",
+        "images": [],
+        "body": "Schwarz Group, owner of Lidl and Kaufland, announced on August 27 that it plans to invest up to €5.6 billion by 2033 in a data center near Rostock. The proposed facility is designed for 240 megawatts of capacity by 2033, with a possible 1-gigawatt grid connection by 2045, and construction is expected to create approximately 120 jobs. The group plans to use renewable power during normal operation and intends to serve its own ecosystem as well as sovereign cloud and AI customers through Schwarz Digits and STACKIT. Its partnership with Mecklenburg-Western Pomerania also targets digital building permits and managed teacher workstations by the end of 2026, showing that the infrastructure plan already has operational use cases. Operations leaders evaluating European hosting will need to compare migration effort, latency, availability and integration with existing ERP and shop-floor systems. Finance teams should model total cloud cost, exit risk and compliance overhead instead of choosing solely on headline storage or computing prices. Werkstacks can package data inventories, migration-readiness assessments and Power BI architecture that lets German SMBs adopt sovereign infrastructure without rebuilding their reporting stack.",
+        "sources": "Reuters, Schwarz Group"
+        }
+        ]
+        }
+      {
         "week": "Week 34 · 2026",
         "items": [
           {
