@@ -3,6 +3,44 @@
     "label": "Werkstacks Brief",
     "weeks": [
       {
+        "week": "Week 36 · 2026",
+        "items": [
+          {
+            "id": "snowflake-links-ai-adoption-to-data-growth",
+            "category": "Data & Analytics",
+            "headline": "Snowflake links AI adoption to core data growth",
+            "teaser": "Snowflake's 37% product-revenue increase shows that enterprise AI is expanding demand for the underlying data platform, not only new assistant features. That creates a practical opening for governed models, workload-cost controls and adoption dashboards.",
+            "images": [
+              "assets/news/week36-1.jpg"
+            ],
+            "body": "Snowflake reported on September 2 that fiscal second-quarter product revenue reached $1.49 billion, up 37% year over year, while total revenue rose 35% to $1.55 billion. It increased its fiscal 2027 product-revenue outlook to $6.07 billion from $5.84 billion, and its shares climbed nearly 25% the following day. Management said AI products generated about half of the recent growth acceleration, while net revenue retention was 126% and 828 customers now spend more than $1 million annually. The signal for operations teams is that AI workloads are pulling demand into core data platforms, making clean models, reliable pipelines and usage controls more valuable than isolated chatbot pilots. Finance leaders should track compute consumption and business value together because consumption-based analytics can expand faster than the budgets that approved the original use case. Werkstacks can offer an AI data-readiness assessment that inventories sources, fixes semantic definitions and establishes cost-per-workflow baselines before deployment. A recurring service can then combine Power BI adoption, quality and spend dashboards with monthly workload optimization so clients scale useful AI without losing cost control.",
+            "sources": "Reuters, Snowflake, U.S. Securities and Exchange Commission"
+          },
+          {
+            "id": "ai-shopping-traffic-becomes-measurable",
+            "category": "AI & Technology",
+            "headline": "AI shopping traffic becomes a measurable retail channel",
+            "teaser": "John Lewis says the share of product searches coming through AI agents has grown more than eightfold in one year. Retailers now have enough signal to measure this channel separately and improve the catalog data, content and inventory decisions behind it.",
+            "images": [
+              "assets/news/week36-2.jpg"
+            ],
+            "body": "John Lewis said on September 3 that product searches coming through AI agents reached 2.5% of searches, up from 0.3% a year earlier. The British retailer opened a content studio at its Oxford Street flagship so creators can produce material daily and launched a six-episode video series ahead of Christmas. The share remains small, but its speed of growth means conventional search reports may miss an emerging source of demand. Retail operations teams should tag AI-referred sessions, monitor product availability and returns by source, and improve the structured catalog attributes agents use to compare offers. Finance teams need contribution-margin reporting by channel because AI-driven discovery may change acquisition costs and concentration risk. Werkstacks can build Power BI funnels that connect referral source, product-content completeness, stock, conversion and margin. A second opening is an agent-readiness audit for product feeds and Excel-based catalog processes, giving retailers a low-cost way to test the channel before committing major marketing budgets.",
+            "sources": "Reuters, The Guardian"
+          },
+          {
+            "id": "tesla-turns-safety-telemetry-into-eu-case",
+            "category": "Data & Analytics",
+            "headline": "Tesla turns safety telemetry into an EU approval case",
+            "teaser": "Tesla has opened a safety-evidence dashboard as it seeks wider European approval for supervised driving software. The episode shows why operational AI needs transparent denominators, comparable control groups and auditable event definitions before leaders rely on headline performance claims.",
+            "images": [
+              "assets/news/week36-3.jpg"
+            ],
+            "body": "Tesla said on September 1 that its supervised self-driving software recorded 4.1 times fewer collisions than manually driven Teslas across more than 100 million kilometers in Belgium, Denmark, Estonia, Lithuania and the Netherlands between April and August. Its data listed three collisions on highways and nine on other roads, while the manual comparison group recorded 137 and 490, respectively. France began on-road tests two days later, ahead of a possible EU vote as early as October that would require support from at least 15 member states representing 65% of the bloc's population. Tesla published its methodology and downloadable evidence, but regulators and researchers still need to examine exposure mix, driver selection and whether the comparison groups are equivalent. For operations teams, the lesson is that any autonomous workflow needs a live evidence pack covering event definitions, interventions, exceptions and human overrides. Finance teams can use the same structure to connect incident reduction with warranty, insurance, downtime and compliance costs. Werkstacks can build governed safety and exception dashboards for mobility, logistics and manufacturing clients, with data lineage and benchmark controls designed for internal approval or regulatory review.",
+            "sources": "Reuters, Tesla"
+          }
+        ]
+      },
+      {
   "week": "Week 35 · 2026",
   "items": [
     {
