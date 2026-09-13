@@ -3,6 +3,44 @@
     "label": "Werkstacks Brief",
     "weeks": [
       {
+        "items": [
+          {
+            "body": "OpenAI launched ChatGPT for Financial Services on September 10, targeting investment bankers and equity researchers with Morgan Stanley and Evercore as design partners. The service pairs GPT-6 Astra with at least five built-in data collections, including LSEG News, PitchBook, Daloopa, Crunchbase and Quartr, while existing subscriptions can connect through FactSet, S&P Global, Preqin and Datasite. Role-based access, encryption and exportable workspace logs place permissions and auditability inside the operating model rather than around it. For finance teams, the larger change is that research, financial models and client materials can draw from licensed and internal sources in one governed workspace. Operations leaders will need controls for source entitlements, prompt and template versions, approvals and error escalation before high-stakes work moves into production. Werkstacks can build Power BI adoption dashboards that connect usage, turnaround time, exception rates and analyst review outcomes to business value. A practical opening is a finance-AI readiness package that maps source permissions, standardizes Excel models and establishes audit evidence before wider rollout.",
+            "category": "AI & Technology",
+            "headline": "OpenAI embeds licensed data in finance workflows",
+            "id": "openai-embeds-licensed-data-in-finance-workflows",
+            "images": [
+              "assets/news/week37-1.jpg"
+            ],
+            "sources": "OpenAI, Reuters",
+            "teaser": "OpenAI's finance-specific ChatGPT turns licensed market data, internal templates and audit controls into one operating environment. The opportunity is moving from isolated analyst prompts to governed workflows whose speed, accuracy and cost can be measured."
+          },
+          {
+            "body": "The Institut der deutschen Wirtschaft reported on September 8 that its new study analyzed approximately 182 million unique online job postings across all 27 EU member states from 2022 through 2025. In 2025, one in five EU companies with at least 10 employees used a major AI technology, up from 8% in 2023. Adoption ranged from 34% to 42% in Denmark, Finland, Sweden, Belgium and Luxembourg, while Romania stood at 5%. Researchers used a multilingual classification model and reweighted the postings against actual employment shares to reduce the bias created by occupations that advertise online more often. Operations teams can apply this framework to compare the capabilities required by planned AI workflows with the skills available in each site, shift and function. Finance leaders can then model whether hiring, internal training or external specialists offer the best time-to-value for each use case. Werkstacks can turn HR, project and usage data into a Power BI skills-gap dashboard and connect it to a phased automation roadmap with measurable productivity targets.",
+            "category": "Data & Analytics",
+            "headline": "Europe's AI skills gap becomes measurable",
+            "id": "europes-ai-skills-gap-becomes-measurable",
+            "images": [
+              "assets/news/week37-2.jpg"
+            ],
+            "sources": "Institut der deutschen Wirtschaft, Eurostat, Lightcast",
+            "teaser": "A new EU-wide labor-market study puts hard numbers behind the skills constraint facing AI adoption. Companies can use the same evidence-led approach to decide which capabilities to hire, train or source externally before software investments stall."
+          },
+          {
+            "body": "GE Aerospace said on September 8 that it agreed to buy Consolidated Precision Products for $11.75 billion to bring a critical part of its engine supply chain in-house. CPP is expected to generate about $2 billion of revenue in 2027, and roughly 70% of its sales come from commercial and defense engines. GE expects its demand for airfoils to rise more than 30% by 2030 from 2026 levels while its engine backlog extends into the next decade. The company plans to raise factory yields and machine utilization while reducing scrap and rework, turning operational data into a central part of the acquisition case. Manufacturing teams need a shared view of first-pass yield, cycle time, work in progress, equipment availability and supplier delivery risk at each constrained step. Finance teams can connect those measures to missed shipments, working capital and buy-versus-build scenarios before committing capital. Werkstacks can offer a bottleneck diagnostic followed by Power BI capacity dashboards and automated weekly exception reporting for manufacturers with complex, high-value production flows.",
+            "category": "Data & Analytics",
+            "headline": "GE buys control of a critical production bottleneck",
+            "id": "ge-buys-control-of-a-production-bottleneck",
+            "images": [
+              "assets/news/week37-3.jpg"
+            ],
+            "sources": "Reuters, GE Aerospace",
+            "teaser": "GE Aerospace's $11.75 billion purchase of a precision-castings supplier shows how valuable a single constrained process can become. Manufacturers should identify their own bottlenecks through yield, utilization and supplier data before scarcity forces a much more expensive solution."
+          }
+        ],
+        "week": "Week 37 · 2026"
+      },
+      {
         "week": "Week 36 · 2026",
         "items": [
           {
